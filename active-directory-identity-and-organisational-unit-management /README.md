@@ -19,10 +19,12 @@ By completing this project, I practiced structuring Active Directory correctly, 
 - Virtualized lab environment (home lab)
 
 ## Step 1: Creating Organizational Units (OUs)
-<img width="1353" height="685" alt="Screenshot from 2026-03-23 02-10-06" src="https://github.com/user-attachments/assets/272edcff-39e9-4cf0-a2ef-972f8aa3b99d" />
+<img width="1353" height="685" alt="Screenshot from 2026-03-23 02-09-12" src="https://github.com/user-attachments/assets/c76a9acd-2986-4c78-8ccf-4da5a85cd80f" />
+
 I began by opening **Active Directory Users and Computers (ADUC)** from the Windows Administrative Tools menu.
 Before creating any users or groups, I designed and implemented a clean and organized **Organizational Unit (OU) structure**. This included dedicated OUs such as **Users**, **Groups**, and department-specific containers.
-<img width="1025" height="601" alt="Screenshot from 2026-03-23 04-41-15" src="https://github.com/user-attachments/assets/72eef62a-c6f0-46e1-91b1-5bf519e489c6" />
+<img width="1025" height="601" alt="Screenshot from 2026-03-23 04-41-15" src="https://github.com/user-attachments/assets/f16386eb-fe7e-426c-9959-a3f476481cf0" />
+
 
 Creating OUs first is a best practice because it helps maintain order within the domain and allows Group Policies to be applied in a controlled and structured manner. To create each OU, I right-clicked the domain name, selected **New**, then **Organizational Unit**, and completed the naming and configuration process.
 
@@ -32,7 +34,8 @@ After the OU structure was in place, I proceeded to create **security groups**, 
 
 All groups were created as **Global Security Groups**, which are recommended for managing access within a single-domain environment. These groups were later used to assign permissions to resources and control user access based on job roles.
 
-<img width="1025" height="601" alt="Screenshot from 2026-03-23 04-41-35" src="https://github.com/user-attachments/assets/4f0610cb-c130-4a87-878a-6e35fd88333e" />
+<img width="1025" height="601" alt="Screenshot from 2026-03-23 04-41-35" src="https://github.com/user-attachments/assets/53df7e99-c1a3-4642-9e90-d95f29c148a2" />
+
 
 ## Step 3: Creating User Accounts
 
@@ -40,7 +43,7 @@ With the security groups created, I then created user accounts for individuals w
 
 Each account was configured with a secure password, and I enabled the option **“User must change password at next logon”** to follow best security practices. This mirrors real-world onboarding procedures used in professional IT environments.
 
-<img width="1025" height="601" alt="Screenshot from 2026-03-23 04-44-54" src="https://github.com/user-attachments/assets/267b1d4d-fff3-4ed4-b991-c85d559a4eb2" />
+<img width="1025" height="601" alt="Screenshot from 2026-03-23 04-44-54" src="https://github.com/user-attachments/assets/3fff4311-da7f-4922-b66b-9250107e3150" />
 
 once the user accounts were created, I assigned users to their appropriate security groups based on their roles. This was done by opening the group’s properties and adding users through the **Members** tab.
 
@@ -49,7 +52,8 @@ Assigning users to groups instead of granting permissions directly to individual
 ## Step 5: Verification and Validation
 
 To finalize the configuration, I performed several verification checks to ensure everything was set up correctly. I reviewed each user’s **Member Of** tab to confirm proper group membership and inspected each OU to verify that objects were placed in the correct containers.
-<img width="1360" height="564" alt="Screenshot from 2026-04-13 00-22-06" src="https://github.com/user-attachments/assets/c18bb106-cf2f-4416-bc47-26454242aa4c" />
+<img width="1360" height="564" alt="Screenshot from 2026-04-13 00-22-06" src="https://github.com/user-attachments/assets/aa6a435f-3f4f-4be0-9b42-3daed1136903" />
+
 
 These validation steps ensured that users received the appropriate permissions and that the Active Directory structure followed best practices. Authentication and access behavior were also tested from domain-joined client machines.
 
