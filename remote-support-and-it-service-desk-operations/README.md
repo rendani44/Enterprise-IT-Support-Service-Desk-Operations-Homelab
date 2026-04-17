@@ -43,10 +43,16 @@ A one-time, HTTPS-secured session link was generated and shared with the client 
 <img width="1366" height="601" alt="Screenshot from 2026-04-17 04-57-13" src="https://github.com/user-attachments/assets/f72d0840-fa0e-47ce-adda-4769cdf11563" />
 ---
 
-## User Consent & Compliance
 
-The remote session was configured as attended, requiring the end user to explicitly approve access before any remote control was established. The client device displayed a prompt allowing the user to accept or deny the incoming connection.
-<img width="1280" height="1024" alt="Screenshot (4)" src="https://github.com/user-attachments/assets/e1bfb8df-60e3-437a-8b00-49d90575cde3" />
+## User Consent & Connection Transparency
+
+Before any remote access was established, the client workstation was redirected to a secure join page displaying details about the incoming remote support request. This information included the origin of the connection and the scope of access being requested.
+
+The user was required to explicitly approve the session before any remote control was permitted. Clear warnings were presented regarding the handling of sensitive information during the session, ensuring transparency and informed consent prior to access.
+
+This process enforces user awareness, explicit authorization, and compliance with enterprise security and privacy standards for attended remote IT support.
+<img width="1280" height="1024" alt="Screenshot (4)" src="https://github.com/user-attachments/assets/c7d64f99-3a53-48fe-9804-abe12bb733e2" />
+
 
 Access proceeded only after the user granted approval. This control satisfies the consent, privacy, and security requirements enforced in enterprise remote support environments.
 <img width="1280" height="1024" alt="Screenshot (3)" src="https://github.com/user-attachments/assets/154e289d-273b-45d3-b5f2-fae2fb140995" />
