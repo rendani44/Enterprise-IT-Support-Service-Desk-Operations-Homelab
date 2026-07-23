@@ -4,14 +4,14 @@
 
 This project documents the design, configuration, and validation of a secure departmental file share built on Windows Server File Services and Active Directory Domain Services (AD DS).
 
-The objective was to provision a department-level share that enforces **least-privilege access**, **role-based permissions**, and **centralised access management** — principles consistent with enterprise IT security policy.
+The objective was to provision a department-level share that enforces **least-privilege access**, **role-based permissions**, and **centralised access management** principles consistent with enterprise IT security policy.
 
 Permissions are applied in two deliberate layers:
 
 - **Share-level permissions** act as a coarse network gateway, restricting who can reach the share at all.
 - **NTFS permissions** on subfolders enforce granular, role-based access at the file system level.
 
-This layered model prevents share-level permissions from becoming the effective access control mechanism — a common misconfiguration in environments where NTFS permissions are not consistently applied.
+This layered model prevents share-level permissions from becoming the effective access control mechanism  a common misconfiguration in environments where NTFS permissions are not consistently applied.
 
 ---
 
@@ -37,7 +37,7 @@ A single top-level share named **Finance Department** was provisioned via Server
 C:\Share\Finance Department
 ```
 
-A single top-level share was chosen deliberately. This design reduces administrative overhead, simplifies UNC path management for end users, and aligns with standard enterprise file server architecture — where departmental access is controlled beneath a single share entry point rather than through multiple individually permissioned shares.
+A single top-level share was chosen deliberately. This design reduces administrative overhead, simplifies UNC path management for end users, and aligns with standard enterprise file server architecture where departmental access is controlled beneath a single share entry point rather than through multiple individually permissioned shares.
 <img width="1310" height="658" alt="Screenshot from 2026-04-17 22-11-18" src="https://github.com/user-attachments/assets/5a0d1a7a-bdd4-4a54-a9fe-8f5e14649b17" />
 
 ---
@@ -49,16 +49,16 @@ During share provisioning, the default **Everyone (Read)** permission assigned b
 - **Administrators** — Full Control
 - **Designated Active Directory security group** — Read
 
-Granting only Read at the share level is intentional. Share-level permissions serve as a coarse gateway only. Granular access distinctions — such as Modify vs. Read-only — are delegated entirely to NTFS permissions at the subfolder level, where access control is more precise and auditable.
+Granting only Read at the share level is intentional. Share-level permissions serve as a coarse gateway only. Granular access distinctions such as Modify vs. Read-only are delegated entirely to NTFS permissions at the subfolder level, where access control is more precise and auditable.
 <img width="1310" height="658" alt="Screenshot from 2026-04-17 23-38-51" src="https://github.com/user-attachments/assets/45ceb821-3946-468f-a66a-e65873884bf4" />
 
 ---
 
 ### 3. Folder Structure Design
 
-A structured subfolder hierarchy was created within the Finance Department share to reflect operational business functions. Subfolders — including **Accounts Payable** — were organised to map directly to job roles, enabling role-based access control (RBAC) to be applied at the folder level rather than at the share root.
+A structured subfolder hierarchy was created within the Finance Department share to reflect operational business functions. Subfolders including **Accounts Payable** were organised to map directly to job roles, enabling role-based access control (RBAC) to be applied at the folder level rather than at the share root.
 
-Structuring folders by business function rather than by user ensures that access boundaries remain stable as staff join, transfer, or leave the organisation. Access is managed by modifying security group membership — not by editing individual folder permissions — which reduces the risk of permission sprawl over time.
+Structuring folders by business function rather than by user ensures that access boundaries remain stable as staff join, transfer, or leave the organisation. Access is managed by modifying security group membership, not by editing individual folder permissions which reduces the risk of permission sprawl over time.
 <img width="1310" height="658" alt="Screenshot from 2026-04-17 23-45-38" src="https://github.com/user-attachments/assets/7eac0382-8d03-44b9-b8d0-0a73de32299f" />
 
 ### 4. NTFS Permissions Using Security Groups
@@ -67,7 +67,7 @@ NTFS permissions on subfolders were applied exclusively through **Active Directo
 
 This enforces a clean separation between identity management (handled in ADUC) and resource access (enforced via NTFS ACLs), providing two key operational benefits:
 
-1. **Access provisioning and revocation** requires only group membership changes — not folder permission edits.
+1. **Access provisioning and revocation** requires only group membership changes not folder permission edits.
 2. **The ACL on each folder remains stable and auditable** regardless of staff turnover.
 
 This approach is consistent with the principle that resource ACLs should not need to change when user assignments change.
@@ -83,7 +83,7 @@ End-to-end access was validated from a domain-joined Windows 10/11 client workst
 \\RENDANI-SA01\Finance Department
 ```
 
-Successful access from the client workstation confirms that share-level permissions, NTFS permissions, and Active Directory group membership are all correctly aligned. This validation step is critical — it proves that the permission chain functions as intended from the perspective of an authenticated end user, not just from the server console.
+Successful access from the client workstation confirms that share-level permissions, NTFS permissions, and Active Directory group membership are all correctly aligned. This validation step is critical, it proves that the permission chain functions as intended from the perspective of an authenticated end user, not just from the server console.
 <img width="1310" height="658" alt="Screenshot from 2026-04-18 02-27-38" src="https://github.com/user-attachments/assets/419a045c-f0ac-4671-aca7-582c088b4818" />
 
 ### 6. Client Access Optimisation
