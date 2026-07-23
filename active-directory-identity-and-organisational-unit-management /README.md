@@ -39,7 +39,7 @@ All groups were created as **Global Security Groups**, which are recommended for
 
 ## Step 3: Creating User Accounts
 
-With the security groups created, I then created user accounts for individuals who would be part of the domain. Inside the **Users OU**, I added new users by selecting **New → User** and entering the required information, including first name, last name, and user logon name.
+With the security groups created, I then created user accounts for individuals who would be part of the domain. Inside the **Users OU**, I added new users by selecting **New-User** and entering the required information, including first name, last name, and user logon name.
 
 Each account was configured with a secure password, and I enabled the option **“User must change password at next logon”** to follow best security practices. This mirrors real-world onboarding procedures used in professional IT environments.
 
