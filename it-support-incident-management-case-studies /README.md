@@ -1,4 +1,4 @@
-# User Account Lockout — Incident Documentation
+# User Account Lockout - Incident Documentation
 <img width="1360" height="620" alt="Screenshot from 2026-04-17 01-56-01" src="https://github.com/user-attachments/assets/a7fedeee-7ae4-4c27-8d83-a301f3445021" />
 
 **Organisation:** Enterprise IT Support & Service Desk Operations
@@ -40,13 +40,13 @@
 
 ## Incident Handling Procedure
 
-### Step 1 — Classify the Incident as Security-Sensitive
+### Step 1 - Classify the Incident as Security-Sensitive
 
 User account lockouts can indicate repeated incorrect password attempts, a misconfigured device, or potential credential misuse. I treated this incident as security-sensitive from the outset and made no account changes prior to completing identity verification.
 
 ---
 
-### Step 2 — Verify User Identity
+### Step 2 - Verify User Identity
 
 Before taking any remediation action, I verified the user's identity by confirming that the request originated from the official ITSM platform and by cross-referencing the submitted name and username against Active Directory records.
 <img width="1349" height="545" alt="Screenshot from 2026-04-17 04-10-44" src="https://github.com/user-attachments/assets/7769bbd2-a3b8-41f4-a59c-f5bb20324a68" />
@@ -54,24 +54,24 @@ Before taking any remediation action, I verified the user's identity by confirmi
 
 ---
 
-### Step 3 — Confirm Account Lockout Status
+### Step 3 - Confirm Account Lockout Status
 
 I reviewed the user's account properties in Active Directory Users and Computers. The **Account is locked out** checkbox on the Account tab was selected, while the account showed no disabled or expired status. This confirmed the lockout was caused by failed authentication attempts rather than an administrative action.
 <img width="1360" height="588" alt="Screenshot from 2026-04-17 02-47-01" src="https://github.com/user-attachments/assets/d671b1e0-3a3d-4ee6-bec2-8cb29f4f77bf" />
 
-### Step 4 — Unlock the Account
+### Step 4 - Unlock the Account
 
 After completing identity verification, I unlocked the account via the Account tab in the user's Active Directory properties. This restored the user's ability to authenticate while keeping all other account settings intact.
 <img width="1360" height="588" alt="Screenshot from 2026-04-17 02-48-45" src="https://github.com/user-attachments/assets/8deafdbc-340d-47b9-9724-62655fd6b55f" />
 ---
 
-### Step 5 — Reset the User Password
+### Step 5 - Reset the User Password
 
 As a security best practice, I reset the user's password to invalidate any potentially compromised credentials. I enabled the **User must change password at next logon** option so that the user would establish a private, self-managed password on first login.
 <img width="1360" height="588" alt="Screenshot from 2026-04-17 02-49-48" src="https://github.com/user-attachments/assets/f6f66ecc-45cb-4e7b-b06e-b8905dc220d2" />
 ---
 
-### Step 6 — Controlled Verification of Access
+### Step 6 - Controlled Verification of Access
 
 To uphold least-privilege principles, I did not authenticate on behalf of the user. I provided the user with the temporary password and instructed them to log in independently. The user confirmed successful authentication via the ITSM ticket.
 
