@@ -15,7 +15,7 @@ I opened Active Directory Users and Computers (ADUC) and navigated to the approp
 
 # 2. Disable the Account
 I right-clicked the user account and selected Disable Account.
-Disabling the account immediately prevents the user from authenticating against the domain — blocking access to all domain-joined computers and network resources.
+Disabling the account immediately prevents the user from authenticating against the domain  blocking access to all domain-joined computers and network resources.
 <img width="1022" height="606" alt="Screenshot from 2026-03-23 05-32-26" src="https://github.com/user-attachments/assets/936165d7-ad07-41d6-9076-410e0aac15f5" />
 
 Verification: A downward-pointing arrow icon appears on the account object in ADUC, confirming the account has been successfully disabled.
@@ -23,7 +23,7 @@ Verification: A downward-pointing arrow icon appears on the account object in AD
 
 # 3. Reset the Account Password
 I right-clicked the user account and selected Reset Password, then set a randomised, secure password.
-This step ensures the account cannot be accessed — even if it were temporarily re-enabled — providing an additional layer of security throughout the offboarding window.
+This step ensures the account cannot be accessed even if it were temporarily re-enabled providing an additional layer of security throughout the offboarding window.
 <img width="1022" height="606" alt="Screenshot from 2026-03-23 05-42-32" src="https://github.com/user-attachments/assets/2ad1fcff-27cc-47e7-8ea0-57bb448fc6ff" />
 
 # 4. Remove Group Memberships
@@ -35,11 +35,11 @@ Removing all group memberships ensures the user retains no residual permissions 
 
 # 5. Move the Account to the Disabled Users OU
 After completing the above steps, I moved the account from its current OU into a dedicated Disabled Users OU by dragging and dropping it within ADUC.
-This OU serves as a holding area for inactive accounts, keeping the directory organised and clearly separated from active employee accounts — a standard practice in enterprise Active Directory environments.
+This OU serves as a holding area for inactive accounts, keeping the directory organised and clearly separated from active employee accounts a standard practice in enterprise Active Directory environments.
 <img width="1022" height="606" alt="Screenshot from 2026-03-23 05-47-18" src="https://github.com/user-attachments/assets/6abb6fd4-5de9-4c5a-9270-13ae98c13a6e" />
 
 # 6. Delete the Account After the Retention Period
-The account remains in the Disabled Users OU for the duration of the retention period — typically 30 to 90 days in real-world environments — to allow for any access recovery or audit requirements.
+The account remains in the Disabled Users OU for the duration of the retention period typically 30 to 90 days in real-world environments to allow for any access recovery or audit requirements.
 Once the retention period has elapsed, I navigated to the Disabled Users OU, right-clicked the account, and selected Delete to permanently remove it from Active Directory.
 <img width="1022" height="606" alt="Screenshot from 2026-03-23 05-48-50" src="https://github.com/user-attachments/assets/18807a57-b447-4176-be1c-051680b2583d" />
 
@@ -52,5 +52,5 @@ Group membership removal eliminates all permission assignments within the domain
 Organised archival in a dedicated OU maintains directory hygiene and supports audit readiness
 Permanent deletion is performed only after an appropriate retention period, consistent with real-world IT policy
 
-This exercise provided hands-on experience with user lifecycle management, access control, and Active Directory administration — skills directly applicable to roles in IT support, systems administration, and identity and access management (IAM).
+This exercise provided hands-on experience with user lifecycle management, access control, and Active Directory administration skills directly applicable to roles in IT support, systems administration, and identity and access management (IAM).
 
