@@ -100,7 +100,7 @@ Quick Access pinning is a client-side convenience setting and does not affect sh
 | Windows Server File Services | Provisioned and managed a departmental file share via Server Manager (File and Storage Services role) |
 | Share-Level Permission Design | Removed default Everyone access; restricted share entry to Administrators and a designated AD security group |
 | NTFS Permission Administration | Applied granular ACLs to subfolders using AD security groups, enforcing role-based access at the file system layer |
-| Least-Privilege Enforcement | Implemented a two-layer permission model — permissive share boundary with restrictive NTFS controls — to minimise over-permissioning |
+| Least-Privilege Enforcement | Implemented a two-layer permission model  permissive share boundary with restrictive NTFS controls to minimise over-permissioning |
 | Active Directory Administration | Created and managed security groups in ADUC; used group membership to control resource access rather than direct user assignment |
 | Role-Based Access Control (RBAC) | Structured folder hierarchy and group assignments to reflect job function, enabling access to be governed by organisational role |
 | End-to-End Access Validation | Confirmed correct permission enforcement from a domain-joined client workstation using a standard user account via UNC path |---
